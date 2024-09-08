@@ -1,0 +1,67 @@
+@if (isLoading) {
+    <div class="d-flex align-items-center justify-content-center" style="height: 600px;">
+        <i class="fa-solid fa-spinner text-white fa-spin " style="font-size: 70px;"></i>
+    </div>
+}
+@else {
+    @if (details) {
+    <section class="py-5 text-white ">
+        <div [style.backgroundImage]="'url(' + srcImage + details.backdrop_path + ')'" class="custom"></div>
+        <div class="container py-5 ">
+            <button class="btn my-4 py-2 px-4 fs-5" routerLink="/home">Back To Home</button>
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <div>
+                        <img [src]="srcImage + details.poster_path" alt="" class="w-100">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <h2 class="text-center">{{details.original_title}}</h2>
+                        <div>
+                            <span class="fs-5"><i
+                                    class="fa-solid fa-star text-danger"></i>{{details.vote_average.toFixed(1)}}/10</span>
+                            <p class="my-4 fs-5">Release Date{{details.release_date}}</p>
+                            <p class="my-4 fs-5">{{details.overview}}</p>
+                            <span class="fs-5 fw-bold">Genres</span>
+                            <ul class="list-unstyled m-0 p-0">
+                                @for (item of details.genres; track $index) {
+                                <li class="fs-4 ">{{item.name}}</li>
+    
+                                }
+                            </ul>
+                        </div>
+                        <a [href]="details.homepage" target="_blank"><button class="btn my-4 py-2 px-4 fs-5">Visit Movie
+                                Homepage</button></a>
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div>
+                <h2 class="text-center mt-2">Movie Info</h2>
+                <div class="fs-4 d-flex line flex-column-reverse">
+                    <span class="x py-2">
+                        Budget: <span class="text-white">${{ details.budget.toLocaleString() }}</span>
+                    </span>
+                </div>
+                <div class="fs-4 d-flex line flex-column-reverse ">
+                    <span class="x py-2">
+                        Revenue: <span class="text-white">${{ details.revenue.toLocaleString() }}</span>
+                    </span>
+                </div>
+                <div class="fs-4 d-flex line flex-column-reverse ">
+                    <span class="x py-2">
+                        Runtime: <span class="text-white">{{ details.runtime }} minutes</span>
+                    </span>
+                </div>
+                <div class="fs-4 d-flex line flex-column-reverse ">
+                    <span class="x py-2">
+                        Status: <span class="text-white">{{ details.status }} minutes</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    }
+}

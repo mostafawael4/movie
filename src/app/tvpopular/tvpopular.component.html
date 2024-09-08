@@ -1,0 +1,24 @@
+<section class="">
+    @if (isLoading) {
+    <div class="d-flex align-items-center justify-content-center" style="height: 600px;">
+        <i class="fa-solid fa-spinner text-white fa-spin " style="font-size: 70px;"></i>
+    </div>
+    }
+    @else {
+        <div class="container ">
+            <div class="row g-4">
+                @for (item of movieList; track $index) {
+                <div class="col-md-3 pointer" [routerLink]="['/tvDetails' , item.id]">
+                    <div class="item p-2">
+                        <img [src]="srcImage+ item.poster_path" alt="" class="w-100 pb-2">
+                        <p class="lh-sm">{{item.name}}</p>
+                        <p class="lh-sm">Aired: {{item.first_air_date}}</p>
+                    </div>
+                </div>
+                }
+        
+            </div>
+        </div>
+    }
+    
+</section>

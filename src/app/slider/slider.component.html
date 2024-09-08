@@ -1,0 +1,33 @@
+<section class="py-5 d-flex justify-content-center align-items-center">
+    
+    @if (isLoading) {
+        <div class="">
+            <i class="fa-solid fa-spinner text-white fa-spin " style="font-size: 70px;"></i>
+        </div>
+    }
+    @else {
+        <div class="mt-5 container text-white">
+            <h2 class="text-center">Now Playing</h2>
+            <owl-carousel-o [options]="customOptions">
+                @for (item of nowPlaying; track $index) {
+                <ng-container>
+                    <ng-template carouselSlide>
+                        <div class="p-2 text-center ">
+                            <div class="bg-black py-1 pointer" [routerLink]="['/movieDetails' , item.id]">
+                                <img [src]="srcImage+item.poster_path" class="w-full">
+                                <h3 class="text-xl"><span><i
+                                            class="fa-solid fa-star text-danger"></i></span>{{item.vote_average.toFixed(1)}}/10
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+        
+                </ng-container>
+                }
+        
+            </owl-carousel-o>
+        
+        </div>
+    }
+    
+</section>

@@ -1,0 +1,10 @@
+.item{
+    background-color: black;
+    color: white;
+    transition: all 1s;
+}
+.col-md-3:hover .item{
+    cursor: pointer;
+    scale: 1.05;
+    background-color: red;
+}

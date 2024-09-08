@@ -1,0 +1,34 @@
+.custom {
+    width: 100%;
+    height: 100vh; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: absolute;
+    z-index: -1; 
+    top: 0;
+    left: 0;
+
+}
+.custom::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.707);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+section {
+    z-index: 1;
+    position: relative;
+}
+.btn{
+    color: white;
+    border: 1px solid red;
+    transition: all 0.5s;
+}
+.btn:hover{
+    background-color: red;
+    color: black;
+}

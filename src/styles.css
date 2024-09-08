@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    /* font-family: Poppins sans-serif; */
+    background-color: black;
+}
+
+.pointer{
+    cursor: pointer;
+}
+.x{
+    color: red;
+
+}
+.line::before{
+    content: "";
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.259);
+    
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-mdc-progress-spinner{
+    border: 10px solid white;
+    border-radius: 50%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}

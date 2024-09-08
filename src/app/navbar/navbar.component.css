@@ -1,0 +1,16 @@
+.logoImage{
+    width: 50px;
+}
+.navLogo{
+    cursor: pointer;
+}
+.color{
+    color: red;
+}
+
+a{
+    color: white;
+}
+.h:hover{
+    color: red;
+}
